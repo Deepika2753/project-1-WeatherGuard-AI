@@ -4,6 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WeatherGuard AI — Weather &amp; Risk Advisory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
@@ -15,29 +21,53 @@
         <p>Live weather intelligence &amp; safety advisory</p>
       </div>
     </div>
+    <div class="status">
+      <span class="status-dot"></span>
+      <span>Live</span>
+    </div>
   </header>
 
   <main>
     <section class="panel">
+      <p class="eyebrow">City lookup</p>
       <form id="search-form">
-        <input type="text" id="city-input" placeholder="Enter a city, e.g. Mumbai" required />
-        <button type="submit">Check Weather</button>
+        <input type="text" id="city-input" placeholder="Enter a city, e.g. Mumbai" required autocomplete="off" />
+        <button type="submit">Check weather</button>
       </form>
       <p id="error" class="error"></p>
     </section>
 
     <section id="result" class="panel result-panel" hidden>
+      <p class="eyebrow">Current conditions</p>
+
       <div class="result-header">
-        <h2 id="location-name"></h2>
-        <span id="risk-badge" class="badge"></span>
+        <div class="location-block">
+          <div id="condition-icon" class="condition-icon"></div>
+          <div>
+            <h2 id="location-name"></h2>
+            <p id="location-meta" class="location-meta"></p>
+          </div>
+        </div>
+
+        <div class="gauge-block">
+          <div class="gauge">
+            <div class="gauge-track"></div>
+            <div class="gauge-hole"></div>
+            <div id="gauge-needle" class="gauge-needle"></div>
+          </div>
+          <p id="risk-label" class="risk-label"></p>
+          <p id="gauge-score" class="gauge-score"></p>
+        </div>
       </div>
+
       <div class="metrics" id="metrics"></div>
+
       <p id="advisory" class="advisory"></p>
       <ul id="reasons"></ul>
     </section>
 
     <section class="panel">
-      <h2>Recent Searches</h2>
+      <p class="eyebrow">Search log</p>
       <div id="history"></div>
     </section>
   </main>
