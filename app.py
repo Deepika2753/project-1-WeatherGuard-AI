@@ -44,6 +44,11 @@ def init_db():
         )
 
 
+# Ensure tables exist at import time (so this runs under gunicorn too,
+# not just when the script is executed directly with `python app.py`)
+init_db()
+
+
 def geocode_city(city):
     url = "https://geocoding-api.open-meteo.com/v1/search"
     r = requests.get(
@@ -268,5 +273,4 @@ def server_error(e):
 
 
 if __name__ == "__main__":
-    init_db()
     app.run(host="127.0.0.1", port=5000, debug=False)
