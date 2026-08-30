@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WeatherGuard AI — Weather &amp; Risk Advisory</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">WG</div>
+      <div>
+        <h1>WeatherGuard AI</h1>
+        <p>Live weather intelligence &amp; safety advisory</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <form id="search-form">
+        <input type="text" id="city-input" placeholder="Enter a city, e.g. Mumbai" required />
+        <button type="submit">Check Weather</button>
+      </form>
+      <p id="error" class="error"></p>
+    </section>
+
+    <section id="result" class="panel result-panel" hidden>
+      <div class="result-header">
+        <h2 id="location-name"></h2>
+        <span id="risk-badge" class="badge"></span>
+      </div>
+      <div class="metrics" id="metrics"></div>
+      <p id="advisory" class="advisory"></p>
+      <ul id="reasons"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Recent Searches</h2>
+      <div id="history"></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
