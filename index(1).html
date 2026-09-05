@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherGuard AI — Project Showcase</title>
+  <meta name="description" content="WeatherGuard AI — Smart Weather Intelligence & Risk Advisory Dashboard by Deepika Nar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0d0e1f;
+      --surface:#171933;
+      --surface2:#1d2041;
+      --line:#2b2e57;
+      --violet:#8b7bff;
+      --mint:#57e6b0;
+      --amber:#ffc857;
+      --text:#f4f3fb;
+      --muted:#aaa9c9;
+      --mono:'JetBrains Mono', monospace;
+      --display:'Space Grotesk', sans-serif;
+      --body:'Inter', sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:var(--body);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 85% -5%, rgba(139,123,255,.18), transparent 60%),
+        radial-gradient(700px 420px at -5% 30%, rgba(87,230,176,.08), transparent 55%),
+        var(--bg);
+      min-height:100vh;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1100px;margin:auto;padding:40px 24px 70px}
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;
+      gap:20px;margin-bottom:70px;flex-wrap:wrap
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-family:var(--mono);font-weight:600
+    }
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
+    .back{font-family:var(--mono);font-size:13px;color:var(--muted)}
+    .back:hover{color:var(--mint)}
+    .eyebrow{
+      font-family:var(--mono);font-size:12px;letter-spacing:1.4px;
+      color:var(--mint);text-transform:uppercase;margin-bottom:16px
+    }
+    h1{
+      font-family:var(--display);
+      font-size:clamp(42px,7vw,78px);
+      line-height:1.02;letter-spacing:-2px;max-width:900px
+    }
+    .grad{
+      background:linear-gradient(90deg,var(--violet),var(--mint));
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .lead{
+      max-width:760px;margin-top:22px;color:var(--muted);
+      font-size:18px;line-height:1.7
+    }
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      padding:13px 20px;border-radius:10px;font-family:var(--mono);
+      font-size:13px;font-weight:600;transition:.2s ease
+    }
+    .primary{background:var(--violet);color:#101122}
+    .primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(139,123,255,.28)}
+    .ghost{border:1px solid var(--line);color:var(--text)}
+    .ghost:hover{border-color:var(--mint);transform:translateY(-2px)}
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:16px;margin-top:55px
+    }
+    .card{
+      background:var(--surface);border:1px solid var(--line);
+      border-radius:16px;padding:22px
+    }
+    .card h3{
+      font-family:var(--display);font-size:18px;margin-bottom:10px
+    }
+    .card p{color:var(--muted);font-size:14px;line-height:1.6}
+    .section{margin-top:70px}
+    .section h2{
+      font-family:var(--display);font-size:30px;margin-bottom:20px
+    }
+    .features{
+      display:grid;grid-template-columns:1fr 1fr;gap:14px
+    }
+    .feature{
+      background:var(--surface);border:1px solid var(--line);
+      border-radius:13px;padding:18px
+    }
+    .feature b{display:block;margin-bottom:6px}
+    .feature span{color:var(--muted);font-size:14px;line-height:1.5}
+    .stack{display:flex;gap:10px;flex-wrap:wrap}
+    .tag{
+      font-family:var(--mono);font-size:12px;color:var(--muted);
+      background:var(--surface2);border:1px solid var(--line);
+      border-radius:999px;padding:8px 12px
+    }
+    .highlight{
+      margin-top:70px;padding:26px;border-radius:16px;
+      background:linear-gradient(135deg,rgba(139,123,255,.14),rgba(87,230,176,.08));
+      border:1px solid var(--line)
+    }
+    .highlight h2{font-family:var(--display);font-size:28px;margin-bottom:10px}
+    .highlight p{color:var(--muted);line-height:1.6}
+    footer{
+      margin-top:65px;padding-top:24px;border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      color:var(--muted);font-size:13px
+    }
+    @media(max-width:800px){
+      .grid{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      .topbar{margin-bottom:45px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand"><span class="dot"></span>Deepika Nar · Project Showcase</div>
+      <a class="back" href="https://deepika2753.github.io/deepika-portfolio/" target="_blank" rel="noopener">← Back to Portfolio</a>
+    </div>
+
+    <section>
+      <div class="eyebrow">// AI-powered weather intelligence</div>
+      <h1>WeatherGuard <span class="grad">AI</span></h1>
+      <p class="lead">
+        A smart weather intelligence and risk advisory dashboard that combines live weather data
+        with a rule-based risk engine to classify conditions as Low, Moderate, or High risk and
+        provide practical safety guidance.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="https://project-1-weatherguard-ai-2.onrender.com/" target="_blank" rel="noopener">Open Live Demo →</a>
+        <a class="btn ghost" href="https://github.com/Deepika2753/WeatherGuard-AI" target="_blank" rel="noopener">View Source Code</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Live Weather</h3>
+        <p>Search cities and retrieve current conditions along with forecast information using a weather API.</p>
+      </div>
+      <div class="card">
+        <h3>Risk Assessment</h3>
+        <p>Uses weather factors such as rainfall, wind, and temperature to generate Low, Moderate, or High risk levels.</p>
+      </div>
+      <div class="card">
+        <h3>Safety Advisory</h3>
+        <p>Provides clear recommendations so users can quickly understand possible weather-related risks.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Core Features</h2>
+      <div class="features">
+        <div class="feature">
+          <b>City Search</b>
+          <span>Search weather information for different cities through a clean web interface.</span>
+        </div>
+        <div class="feature">
+          <b>Forecast Display</b>
+          <span>Shows current weather and forecast information in an easy-to-read dashboard.</span>
+        </div>
+        <div class="feature">
+          <b>Automated Risk Level</b>
+          <span>Generates a weather risk category based on predefined conditions and thresholds.</span>
+        </div>
+        <div class="feature">
+          <b>Persistent User Data</b>
+          <span>Supports stored search history and favorites using SQLite in the deployed Flask application.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tech Stack</h2>
+      <div class="stack">
+        <span class="tag">Python</span>
+        <span class="tag">Flask</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">Weather API</span>
+        <span class="tag">Render</span>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <h2>Why I built it</h2>
+      <p>
+        Weather information is useful, but raw numbers alone may not immediately tell users how risky
+        the conditions are. WeatherGuard AI turns weather data into a simple risk level and safety
+        advisory, making the information easier to understand and act upon.
+      </p>
+    </section>
+
+    <footer>
+      <span>Built by Deepika Nar</span>
+      <span>B.Tech CSE · AI & ML</span>
+    </footer>
+  </main>
+</body>
+</html>
